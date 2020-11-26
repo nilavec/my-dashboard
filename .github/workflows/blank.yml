@@ -27,7 +27,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: docker login -u="nilave" -p="$SSH_KEY" 
+        run: | 
+          docker login -u="nilave" -p="$SSH_KEY"
+          docker build -t nilave/toolzilla:latest .
+          docker push nilave/toolzilla:latest
         env:
           SSH_KEY: ${{secrets.DOCKER_PASSWORD}}
         
