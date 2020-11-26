@@ -27,7 +27,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: docker build -t my_image .
+        run: docker login -u="nilave" -p="$SSH_KEY" 
+        env:
+          SSH_KEY: ${{secrets.DOCKER_PASSWORD}}
         
 
       # Runs a set of commands using the runners shell
