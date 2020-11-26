@@ -9,5 +9,5 @@ import (
 
 func init() {
 	db.InitDb()
-	beego.Router("/", &controllers.MainController{})
+	beego.Router("/toolzilla", &controllers.MainController{})
 }
