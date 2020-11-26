@@ -28,10 +28,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: docker build -t my_image .
-      - name: Build, Tag, Publish Docker
-      # You may pin to the exact commit or the version.
-      # uses: HurricanKai/Publish-Docker-Github-Action@a3735f38c4487925096d31493c84c87eef1693f4
-        uses: HurricanKai/Publish-Docker-Github-Action@1.12.1
         
 
       # Runs a set of commands using the runners shell
