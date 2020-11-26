@@ -1,10 +1,10 @@
 package controllers
 
 import (
-	"ah-dashboard/models"
+	//"ah-dashboard/models"
 
 	"github.com/astaxie/beego"
-	"github.com/astaxie/beego/orm"
+	//"github.com/astaxie/beego/orm"
 )
 
 type MainController struct {
