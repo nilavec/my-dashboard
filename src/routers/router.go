@@ -3,7 +3,7 @@ package routers
 import (
 	"ah-dashboard/controllers"
 	"ah-dashboard/db"
-
+	"fmt"
 	"github.com/astaxie/beego"
 )
 
