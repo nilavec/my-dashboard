@@ -10,7 +10,7 @@ import (
 func init() {
 	db.InitDb()
 	BasePath := beego.AppConfig.String("basePath")
-
+	beego.SetStaticPath(fmt.Sprintf("%s/static", BasePath), "static")
 	ns :=
 		beego.NewNamespace(fmt.Sprintf("/%s", BasePath),
 			beego.NSRouter("/", &controllers.MainController{}),
