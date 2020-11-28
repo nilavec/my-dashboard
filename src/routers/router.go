@@ -9,5 +9,12 @@ import (
 
 func init() {
 	db.InitDb()
-	beego.Router("/toolzilla", &controllers.MainController{})
+	BasePath := beego.AppConfig.String("basePath")
+
+	ns :=
+		beego.NewNamespace(fmt.Sprintf("/%s", BasePath),
+			beego.NSRouter("/", &controllers.MainController{}),
+		)
+	beego.AddNamespace(ns)	
+	//beego.Router("/toolzilla", &controllers.MainController{})
 }
