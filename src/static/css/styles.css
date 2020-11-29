@@ -73,16 +73,6 @@ body {
   outline: 0 !important;
 }
 
-.greenFont {
-  font-weight: bold;
-  color: green;
-}
-
-.redFont {
-  font-weight: bold;
-  color: red;
-}
-
 hr {
   box-sizing: content-box;
   height: 0;
