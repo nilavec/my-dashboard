@@ -211,10 +211,14 @@
                                                 <td>{{.Domain}}</td>
                                                 <td>{{.Location}}</td>
                                                 <td>{{.Environ}}</td>
-                                                <td>{{.Status}}</td>                                                
+                                                {{if eq .Status "Online"}}
+                                                <td class="greenFont">{{.Status}}</td>
+                                                {{else}}
+                                                <td class="redFont">{{.Status}}</td>
+                                                {{end}}
                                                 <td>{{.Type}}</td>
                                                 <td>{{.Currver}}</td>
-                                                <td>{{.Url}}</td>
+                                                <td><a href="{{.Url}}"></a></td>
                                             </tr>
                                           {{end}}
                                         </tbody>
