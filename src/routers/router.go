@@ -14,6 +14,10 @@ func init() {
 	ns :=
 		beego.NewNamespace(fmt.Sprintf("/%s", BasePath),
 			beego.NSRouter("/", &controllers.MainController{}),
+			beego.NSRouter("/all", &controllers.MainController{}, "get:GetAll"),					   
+			beego.NSRouter("/offline", &controllers.MainController{}, "get:GetOffline"),
+			beego.NSRouter("/update", &controllers.MainController{}, "get:GetUpdate"),
+			beego.NSRouter("/security", &controllers.MainController{}, "get:GetSecuirty"),					   
 		)
 	beego.AddNamespace(ns)	
 	//beego.Router("/toolzilla", &controllers.MainController{})
