@@ -129,6 +129,7 @@
                                                 <th>Location</th>
                                                 <th>Type</th>
                                                 <th>Version</th>
+                                                <th>LTS</th>                                                
                                                 <th>URL</th>
                                             </tr>
                                         </thead>
@@ -139,6 +140,7 @@
                                                 <th>Location</th>
                                                 <th>Type</th>
                                                 <th>Version</th>
+                                                <th>LTS</th>                                                
                                                 <th>URL</th>
                                             </tr>
                                         </tfoot>
@@ -150,7 +152,8 @@
                                                 <td>{{.Location}}</td>
                                                 <td>{{.Type}}</td>
                                                 <td>{{.Currver}}</td>
-                                                <td>{{.Url}}</td>
+                                                <td>{{.Lts}}</td>                                                
+                                                <td><a href="{{.Url}}" target="_blank">{{.Url}}</a></td>
                                             </tr>
                                           {{end}}
                                         </tbody>
