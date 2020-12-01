@@ -127,7 +127,6 @@
                                                 <th>Name</th>
                                                 <th>Domain</th>
                                                 <th>Location</th>
-                                                <th>Type</th>
                                                 <th>Version</th>
                                                 <th>URL</th>
                                                 <th>CVE_Ids</th>                                                 
@@ -138,7 +137,6 @@
                                                 <th>Name</th>
                                                 <th>Domain</th>
                                                 <th>Location</th>
-                                                <th>Type</th>
                                                 <th>Version</th>
                                                 <th>URL</th>
                                                 <th>CVE_Ids</th>                                                 
@@ -150,9 +148,8 @@
                                                 <td>{{.Name}}</td>
                                                 <td>{{.Domain}}</td>
                                                 <td>{{.Location}}</td>
-                                                <td>{{.Type}}</td>
                                                 <td>{{.Currver}}</td>
-                                                <td>{{.Url}}</td>
+                                                <td><a href="{{.Url}}" target="_blank">{{.Url}}</a></td>
                                                 <td><span style="white-space: pre-line;">{{.Cveids}}</span></td>
                                             </tr>
                                           {{end}}
