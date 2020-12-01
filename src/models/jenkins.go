@@ -11,7 +11,8 @@ type CiJenkins struct {
 	Currver  string `json:"currver" orm:"column(currver)"`
 	Url      string `json:"url" orm:"column(url)"`
 	Isupdated      string `json:"isupdated" orm:"column(isupdated)"`
-	Issecure      string `json:"issecure" orm:"column(issecure)"`	
+	Issecure      string `json:"issecure" orm:"column(issecure)"`
+	Cveids   string `json:"cveids" orm:"column(cveids)"`	
 }
 
 func (u *CiJenkins) TableName() string {
