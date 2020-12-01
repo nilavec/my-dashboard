@@ -2,10 +2,21 @@ package controllers
 
 import (
 	"ah-dashboard/models"
-
+	"strings"	
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 )
+
+type CiJenkinsFull struct {
+	Id       int
+	Name     string
+	Domain   string
+	Location string
+	Type     string
+	Currver  string
+	Url      string
+	Cveids   []string
+}
 
 type MainController struct {
 	beego.Controller
@@ -55,7 +66,13 @@ func (c *MainController) GetUpdate() {
 func (c *MainController) GetSecurity() {	
 	o := orm.NewOrm()
 	var cijenkins_security []models.CiJenkins
+	var cijenkins_security_full []CiJenkinsFull	
 	o.QueryTable("ci_jenkins").Filter("issecure", "N").All(&cijenkins_security, "Name", "Domain", "Location", "Type", "Currver", "Url", "Cveids")
+	for i, s := range cijenkins_security {
+		temp := strings.Split(s.Cveids, "\n")
+		mystruct := CiJenkinsFull{Name: cijenkins_security[i].Name, Domain: cijenkins_security[i].Domain, Location: cijenkins_security[i].Location, Type: cijenkins_security[i].Type, Currver: cijenkins_security[i].Currver, Url: cijenkins_security[i].Url, Cveids: temp}
+		cijenkins_security_full = append(cijenkins_security_full, mystruct)
+	}	
 	c.Data["s"] = cijenkins_security
 	c.TplName = "security.html"
 }
