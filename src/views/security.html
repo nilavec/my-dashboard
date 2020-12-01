@@ -150,7 +150,13 @@
                                                 <td>{{.Location}}</td>
                                                 <td>{{.Currver}}</td>
                                                 <td><a href="{{.Url}}" target="_blank">{{.Url}}</a></td>
-                                                <td><a href="https://www.cvedetails.com/cve/{{.Cveids}}"><span style="white-space: pre-line;">{{.Cveids}}</span></a></td>
+                                                <td>
+                                                    {{range .Cveids}}
+                                                    <span>
+                                                    <a href="https://www.cvedetails.com/cve/{{.}}">{{.}}</a>
+                                                    </span>
+                                                    {{end}}
+                                                </td>
                                             </tr>
                                           {{end}}
                                         </tbody>
