@@ -59,7 +59,7 @@ func (c *MainController) GetOffline() {
 func (c *MainController) GetUpdate() {	
 	o := orm.NewOrm()
 	var cijenkins_update []models.CiJenkins
-	o.QueryTable("ci_jenkins").Filter("isupdated", "N").All(&cijenkins_update, "Name", "Domain", "Location", "Type", "Currver", "Url")
+	o.QueryTable("ci_jenkins").Filter("isupdated", "N").All(&cijenkins_update, "Name", "Domain", "Location", "Type", "Currver", "Lts", "Url")
 	c.Data["s"] = cijenkins_update	
 	c.TplName = "update.html"
 }
