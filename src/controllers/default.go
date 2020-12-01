@@ -55,7 +55,7 @@ func (c *MainController) GetUpdate() {
 func (c *MainController) GetSecurity() {	
 	o := orm.NewOrm()
 	var cijenkins_security []models.CiJenkins
-	o.QueryTable("ci_jenkins").Filter("issecure", "N").All(&cijenkins_security, "Name", "Domain", "Location", "Type", "Currver", "Url")
+	o.QueryTable("ci_jenkins").Filter("issecure", "N").All(&cijenkins_security, "Name", "Domain", "Location", "Type", "Currver", "Url", "Cveids")
 	c.Data["s"] = cijenkins_security
 	c.TplName = "security.html"
 }
