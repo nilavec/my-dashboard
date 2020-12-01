@@ -73,6 +73,6 @@ func (c *MainController) GetSecurity() {
 		mystruct := CiJenkinsFull{Name: cijenkins_security[i].Name, Domain: cijenkins_security[i].Domain, Location: cijenkins_security[i].Location, Type: cijenkins_security[i].Type, Currver: cijenkins_security[i].Currver, Url: cijenkins_security[i].Url, Cveids: temp}
 		cijenkins_security_full = append(cijenkins_security_full, mystruct)
 	}	
-	c.Data["s"] = cijenkins_security
+	c.Data["s"] = cijenkins_security_full
 	c.TplName = "security.html"
 }
