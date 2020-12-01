@@ -130,6 +130,7 @@
                                                 <th>Type</th>
                                                 <th>Version</th>
                                                 <th>URL</th>
+                                                <th>CVE_Ids</th>                                                 
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -140,6 +141,7 @@
                                                 <th>Type</th>
                                                 <th>Version</th>
                                                 <th>URL</th>
+                                                <th>CVE_Ids</th>                                                 
                                             </tr>
                                         </tfoot>
                                         <tbody>
@@ -151,6 +153,7 @@
                                                 <td>{{.Type}}</td>
                                                 <td>{{.Currver}}</td>
                                                 <td>{{.Url}}</td>
+                                                <td><span style="white-space: pre-line;">{{.Cveids}}</span></td>
                                             </tr>
                                           {{end}}
                                         </tbody>
