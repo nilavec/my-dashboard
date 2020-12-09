@@ -13,7 +13,10 @@ type CiJenkins struct {
 	Url      string `json:"url" orm:"column(url)"`
 	Isupdated      string `json:"isupdated" orm:"column(isupdated)"`
 	Issecure      string `json:"issecure" orm:"column(issecure)"`
-	Cveids   string `json:"cveids" orm:"column(cveids)"`	
+	Cveids   string `json:"cveids" orm:"column(cveids)"`
+	Cluster      string `json:"cluster" orm:"column(cluster)"`
+	Nspace      string `json:"nspace" orm:"column(nspace)"`
+	Descr   string `json:"descr" orm:"column(descr)"`	
 }
 
 func (u *CiJenkins) TableName() string {
