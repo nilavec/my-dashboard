@@ -165,10 +165,13 @@
                                                 <th>Name</th>
                                                 <th>Domain</th>
                                                 <th>Location</th>
+                                                <th>Cluster</th>
+                                                <th>Namespace</th>                                                
                                                 <th>Env</th>
                                                 <th>Status</th>                                                
                                                 <th>Type</th>
                                                 <th>Version</th>
+                                                <th>Description</th>                                                
                                                 <th>URL</th>
                                             </tr>
                                         </thead>
@@ -177,10 +180,13 @@
                                                 <th>Name</th>
                                                 <th>Domain</th>
                                                 <th>Location</th>
+                                                <th>Cluster</th>
+                                                <th>Namespace</th>                                                
                                                 <th>Env</th>
                                                 <th>Status</th>                                                  
                                                 <th>Type</th>
                                                 <th>Version</th>
+                                                <th>Description</th>                                                  
                                                 <th>URL</th>
                                             </tr>
                                         </tfoot>
@@ -190,6 +196,8 @@
                                                 <td>{{.Name}}</td>
                                                 <td>{{.Domain}}</td>
                                                 <td>{{.Location}}</td>
+                                                <td>{{.Cluster}}</td>
+                                                <td>{{.Nspace}}</td>                                                
                                                 <td>{{.Environ}}</td>
                                                 {{if eq .Status "Online"}}
                                                 <td style="color:green;font-weight: bold">{{.Status}}</td>
@@ -198,6 +206,7 @@
                                                 {{end}}
                                                 <td>{{.Type}}</td>
                                                 <td>{{.Currver}}</td>
+                                                <td>{{.Descr}}</td>                                                  
                                                 <td><a href="{{.Url}}" target="_blank">{{.Url}}</a></td>
                                             </tr>
                                           {{end}}
