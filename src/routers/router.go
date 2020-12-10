@@ -16,6 +16,8 @@ func init() {
 			beego.NSRouter("/", &controllers.MainController{}),
 			beego.NSRouter("/all", &controllers.MainController{}, "get:GetAll"),					   
 			beego.NSRouter("/offline", &controllers.MainController{}, "get:GetOffline"),
+			beego.NSRouter("/allgrafana", &controllers.MainController{}, "get:GetAllGrafana"),					   
+			beego.NSRouter("/offlinegrafana", &controllers.MainController{}, "get:GetOfflineGrafana"),				   
 			beego.NSRouter("/update", &controllers.MainController{}, "get:GetUpdate"),
 			beego.NSRouter("/security", &controllers.MainController{}, "get:GetSecurity"),					   
 		)
