@@ -66,12 +66,26 @@ func (c *MainController) GetAll() {
 	c.Data["s"] = cijenkins
 	c.TplName = "all.html"
 }
+func (c *MainController) GetAllGrafana() {	
+	o := orm.NewOrm()
+	var cigrafana []models.CiGrafana
+	o.QueryTable("ci_grafana").All(&cigrafana, "Name", "Domain", "Location", "Status","Environ","Type", "Currver", "Url", "Cluster", "Nspace", "Descr")	
+	c.Data["s_grafana"] = cigrafana
+	c.TplName = "all_grafana.html"
+}
 func (c *MainController) GetOffline() {	
 	o := orm.NewOrm()
 	var cijenkins_offline []models.CiJenkins
 	o.QueryTable("ci_jenkins").Filter("status", "Offline").All(&cijenkins_offline, "Name", "Domain", "Location", "Type", "Currver", "Url", "Cluster", "Nspace", "Descr")	
 	c.Data["s"] = cijenkins_offline
 	c.TplName = "offline.html"
+}
+func (c *MainController) GetOfflineGrafana() {	
+	o := orm.NewOrm()
+	var cigrafana_offline []models.CiGrafana
+	o.QueryTable("ci_grafana").Filter("status", "Offline").All(&cigrafana_offline, "Name", "Domain", "Location", "Type", "Currver", "Url", "Cluster", "Nspace", "Descr")	
+	c.Data["s_grafana"] = cigrafana_offline
+	c.TplName = "offline_grafana.html"
 }
 func (c *MainController) GetUpdate() {	
 	o := orm.NewOrm()
