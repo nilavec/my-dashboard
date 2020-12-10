@@ -94,6 +94,13 @@ func (c *MainController) GetUpdate() {
 	c.Data["s"] = cijenkins_update	
 	c.TplName = "update.html"
 }
+func (c *MainController) GetUpdateGrafana() {	
+	o := orm.NewOrm()
+	var cigrafana_update []models.CiGrafana
+	o.QueryTable("ci_grafana").Filter("isupdated", "N").All(&cigrafana_update, "Name", "Domain", "Location", "Type", "Currver", "Lts", "Url", "Cluster", "Nspace", "Descr")
+	c.Data["s"] = cigrafana_update	
+	c.TplName = "update_grafana.html"
+}
 func (c *MainController) GetSecurity() {	
 	o := orm.NewOrm()
 	var cijenkins_security []models.CiJenkins
