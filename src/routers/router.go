@@ -19,6 +19,7 @@ func init() {
 			beego.NSRouter("/allgrafana", &controllers.MainController{}, "get:GetAllGrafana"),					   
 			beego.NSRouter("/offlinegrafana", &controllers.MainController{}, "get:GetOfflineGrafana"),				   
 			beego.NSRouter("/update", &controllers.MainController{}, "get:GetUpdate"),
+			beego.NSRouter("/updategrafana", &controllers.MainController{}, "get:GetUpdateGrafana"),				   
 			beego.NSRouter("/security", &controllers.MainController{}, "get:GetSecurity"),					   
 		)
 	beego.AddNamespace(ns)	
