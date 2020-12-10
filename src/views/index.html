@@ -192,69 +192,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>                        
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table mr-1"></i>
-                                Tools List
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Domain</th>
-                                                <th>Location</th>
-                                                <th>Cluster</th>
-                                                <th>Namespace</th>                                                
-                                                <th>Env</th>
-                                                <th>Status</th>                                                
-                                                <th>Type</th>
-                                                <th>Version</th>
-                                                <th>Description</th>                                                
-                                                <th>URL</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Domain</th>
-                                                <th>Location</th>
-                                                <th>Cluster</th>
-                                                <th>Namespace</th>                                                
-                                                <th>Env</th>
-                                                <th>Status</th>                                                  
-                                                <th>Type</th>
-                                                <th>Version</th>
-                                                <th>Description</th>                                                  
-                                                <th>URL</th>
-                                            </tr>
-                                        </tfoot>
-                                        <tbody>
-                                          {{range .s}}
-                                            <tr>
-                                                <td>{{.Name}}</td>
-                                                <td>{{.Domain}}</td>
-                                                <td>{{.Location}}</td>
-                                                <td>{{.Cluster}}</td>
-                                                <td>{{.Nspace}}</td>                                                
-                                                <td>{{.Environ}}</td>
-                                                {{if eq .Status "Online"}}
-                                                <td style="color:green;font-weight: bold">{{.Status}}</td>
-                                                {{else}}
-                                                <td style="color:red;font-weight: bold">{{.Status}}</td>
-                                                {{end}}
-                                                <td>{{.Type}}</td>
-                                                <td>{{.Currver}}</td>
-                                                <td>{{.Descr}}</td>                                                  
-                                                <td><a href="{{.Url}}" target="_blank">{{.Url}}</a></td>
-                                            </tr>
-                                          {{end}}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </main>
