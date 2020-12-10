@@ -30,16 +30,33 @@ func (c *MainController) Get() {
 	var cijenkins_offline []models.CiJenkins
 	var cijenkins_update []models.CiJenkins
 	var cijenkins_security []models.CiJenkins
+	
+	var cigrafana []models.CiGrafana
+	var cigrafana_offline []models.CiGrafana
+	var cigrafana_update []models.CiGrafana
+	var cigrafana_security []models.CiGrafana
+	
 	o.QueryTable("ci_jenkins").All(&cijenkins, "Name", "Domain", "Location", "Status","Environ","Type", "Currver", "Url", "Cluster", "Nspace", "Descr")
 	o.QueryTable("ci_jenkins").Filter("status", "Offline").All(&cijenkins_offline, "Name", "Domain", "Location", "Type", "Currver", "Url")
 	o.QueryTable("ci_jenkins").Filter("isupdated", "N").All(&cijenkins_update, "Name", "Domain", "Location", "Type", "Currver", "Url")
-	o.QueryTable("ci_jenkins").Filter("issecure", "N").All(&cijenkins_security, "Name", "Domain", "Location", "Type", "Currver", "Url")	
+	o.QueryTable("ci_jenkins").Filter("issecure", "N").All(&cijenkins_security, "Name", "Domain", "Location", "Type", "Currver", "Url")
+	
+	o.QueryTable("ci_grafana").All(&cigrafana, "Name", "Domain", "Location", "Status","Environ","Type", "Currver", "Url", "Cluster", "Nspace", "Descr")
+	o.QueryTable("ci_grafana").Filter("status", "Offline").All(&cigrafana_offline, "Name", "Domain", "Location", "Type", "Currver", "Url")
+	o.QueryTable("ci_grafana").Filter("isupdated", "N").All(&cigrafana_update, "Name", "Domain", "Location", "Type", "Currver", "Url")
+	o.QueryTable("ci_grafana").Filter("issecure", "N").All(&cigrafana_security, "Name", "Domain", "Location", "Type", "Currver", "Url")	
 
 	c.Data["s"] = cijenkins
 	c.Data["total"] = len(cijenkins)
 	c.Data["offline"] = len(cijenkins_offline)
 	c.Data["update"] = len(cijenkins_update)
-	c.Data["security"] = len(cijenkins_security)	
+	c.Data["security"] = len(cijenkins_security)
+	
+	c.Data["s_grafana"] = cigrafana
+	c.Data["total_grafana"] = len(cigrafana)
+	c.Data["offline_grafana"] = len(cigrafana_offline)
+	c.Data["update_grafana"] = len(cigrafana_update)
+	c.Data["security_grafana"] = len(cigrafana_security)		
 	c.TplName = "index.html"
 }
 func (c *MainController) GetAll() {	
