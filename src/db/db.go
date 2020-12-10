@@ -39,7 +39,7 @@ func InitDb() {
 		zap.String("host", pgHost),
 		zap.String("port", pgPort))
 
-	orm.RegisterModel(new(models.CiJenkins))
+	orm.RegisterModel(new(models.CiJenkins), new(models.CiGrafana))
 
 	o := orm.NewOrm()
 	var num int64
